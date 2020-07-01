@@ -180,7 +180,7 @@
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My Doggy Walker" textAlignment="center" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sl1-Ul-xZQ">
-                                        <rect key="frame" x="35.666666666666686" y="60" width="182.66666666666663" height="60"/>
+                                        <rect key="frame" x="35.666666666666671" y="60" width="182.66666666666663" height="60"/>
                                         <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="27"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -389,42 +389,46 @@
                                     <action selector="OnBackPressed:" destination="nAa-zk-76a" eventType="touchUpInside" id="oRS-ea-YkE"/>
                                 </connections>
                             </button>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="59" translatesAutoresizingMaskIntoConstraints="NO" id="js3-mq-WEG" userLabel="headLine">
+                            <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="59" translatesAutoresizingMaskIntoConstraints="NO" id="js3-mq-WEG" userLabel="headLine">
                                 <rect key="frame" x="60" y="64" width="324" height="70"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hello " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6XG-nP-Z6t">
-                                        <rect key="frame" x="0.0" y="13.333333333333332" width="132.66666666666666" height="43.333333333333343"/>
+                                        <rect key="frame" x="0.0" y="10" width="145" height="50"/>
                                         <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="27"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="clientlogo" translatesAutoresizingMaskIntoConstraints="NO" id="Nvf-rK-B8I">
-                                        <rect key="frame" x="191.66666666666663" y="0.0" width="132.33333333333337" height="70"/>
+                                        <rect key="frame" x="204" y="10" width="120" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="120" id="LT5-HA-bzR"/>
+                                        </constraints>
                                     </imageView>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstItem="Nvf-rK-B8I" firstAttribute="top" secondItem="js3-mq-WEG" secondAttribute="top" constant="10" id="1HR-6R-nK0"/>
+                                    <constraint firstAttribute="bottom" secondItem="6XG-nP-Z6t" secondAttribute="bottom" constant="10" id="CQk-7N-UQ4"/>
+                                    <constraint firstItem="Nvf-rK-B8I" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6XG-nP-Z6t" secondAttribute="trailing" constant="50" id="EYG-OG-Qi2"/>
+                                    <constraint firstItem="6XG-nP-Z6t" firstAttribute="leading" relation="lessThanOrEqual" secondItem="js3-mq-WEG" secondAttribute="leading" constant="5" id="NMt-IG-7Lu"/>
+                                    <constraint firstAttribute="bottom" secondItem="Nvf-rK-B8I" secondAttribute="bottom" constant="10" id="OXA-AV-YHM"/>
                                     <constraint firstAttribute="height" constant="70" id="gWb-Vm-nxB">
                                         <variation key="heightClass=compact-widthClass=regular" constant="30"/>
                                     </constraint>
+                                    <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="Nvf-rK-B8I" secondAttribute="trailing" constant="10" id="oI9-DP-mPc"/>
+                                    <constraint firstItem="6XG-nP-Z6t" firstAttribute="top" secondItem="js3-mq-WEG" secondAttribute="top" constant="10" id="wJQ-aX-yA3"/>
                                 </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="dFY-AJ-Xk9" userLabel="DogDetails">
                                 <rect key="frame" x="20" y="149" width="374" height="32"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My Dog:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5pZ-Nv-veO">
-                                        <rect key="frame" x="0.0" y="0.0" width="71.666666666666671" height="32"/>
-                                        <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="20"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pvM-rW-KOK">
-                                        <rect key="frame" x="136.66666666666666" y="0.0" width="42.666666666666657" height="32"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DogName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pvM-rW-KOK">
+                                        <rect key="frame" x="0.0" y="0.0" width="73.333333333333329" height="32"/>
                                         <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kind" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VYk-D7-Eja">
-                                        <rect key="frame" x="244.33333333333334" y="0.0" width="34.333333333333343" height="32"/>
+                                        <rect key="frame" x="191.33333333333334" y="0.0" width="34.333333333333343" height="32"/>
                                         <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -737,7 +741,7 @@
                                                     </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DogKind" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qqz-mw-hhQ">
-                                                    <rect key="frame" x="90" y="4.9999999999999982" width="66" height="25.333333333333329"/>
+                                                    <rect key="frame" x="120" y="4.9999999999999982" width="66" height="25.333333333333329"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -754,7 +758,7 @@
                                                     </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DogAge" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="usy-pV-IAk">
-                                                    <rect key="frame" x="186" y="4.9999999999999982" width="61.666666666666657" height="25.333333333333329"/>
+                                                    <rect key="frame" x="216" y="4.9999999999999982" width="61.666666666666686" height="25.333333333333329"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -762,7 +766,7 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="bottom" secondItem="4iL-AZ-QNl" secondAttribute="bottom" constant="5" id="6bJ-iQ-j08"/>
-                                                <constraint firstItem="Qqz-mw-hhQ" firstAttribute="leading" secondItem="4yc-mi-OCq" secondAttribute="trailing" constant="30" id="9Lt-EO-PsO"/>
+                                                <constraint firstItem="Qqz-mw-hhQ" firstAttribute="leading" secondItem="4yc-mi-OCq" secondAttribute="trailing" constant="60" id="9Lt-EO-PsO"/>
                                                 <constraint firstAttribute="bottom" secondItem="4yc-mi-OCq" secondAttribute="bottom" constant="5" id="9P8-ts-q7W"/>
                                                 <constraint firstItem="4yc-mi-OCq" firstAttribute="leading" secondItem="mVq-8e-q8C" secondAttribute="leading" constant="15" id="FEv-x3-2nk"/>
                                                 <constraint firstItem="Qqz-mw-hhQ" firstAttribute="top" secondItem="mVq-8e-q8C" secondAttribute="top" constant="5" id="Ggl-wc-qEK"/>
