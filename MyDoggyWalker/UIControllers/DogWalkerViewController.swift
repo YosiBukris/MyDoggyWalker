@@ -190,17 +190,22 @@ class DogWalkerViewController: UIViewController, UITableViewDelegate, UITableVie
     
     @IBAction func acceptRequest(_ sender: UIButton) {
         if (self.requestToFocud != nil){
-            self.requestToFocud?.status = CONFIRMED
-            updateDataOnDB(walkToUpdate: self.requestToFocud!)
-            for i in 0..<self.requests.count{
-                if self.requests[i].clientId == self.requestToFocud!.clientId{
-                    self.requests.remove(at: i)
-                    self.clients.append(self.requestToFocud!)
-                    self.reloadScreen(){
-                    print("accept succede!")
+            if (Int(self.clients.count)<Int(self.walker!.maxDogs!)!){
+                self.requestToFocud?.status = CONFIRMED
+                updateDataOnDB(walkToUpdate: self.requestToFocud!)
+                for i in 0..<self.requests.count{
+                    if self.requests[i].clientId == self.requestToFocud!.clientId{
+                        self.requests.remove(at: i)
+                        self.clients.append(self.requestToFocud!)
+                        self.reloadScreen(){
+                        print("accept succede!")
+                        }
+                        return
                     }
-                    return
                 }
+            }
+            else{
+                print("Too much clients!")
             }
         }
     }
